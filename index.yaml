@@ -1,0 +1,50 @@
+apiVersion: v1
+entries:
+  app-of-apps:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2020-05-01T07:14:38.323800697Z"
+    description: A Helm chart to create an ArgoCD app-of-apps based on https://github.com/rht-labs/ubiquitous-journey/tree/master/example-deployment
+    digest: cbb7d80679506062ca103490839047a16a04e4e56b07849c6b4c62a1ecdc5b10
+    maintainers:
+    - name: garethahealy
+    name: app-of-apps
+    type: application
+    urls:
+    - https://github.com/RedHat-Consulting-UK/helm3/releases/download/app-of-apps-0.0.1/app-of-apps-0.0.1.tgz
+    version: 0.0.1
+  argocd:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2020-05-01T07:14:38.429431271Z"
+    dependencies:
+    - name: operatorhub
+      repository: https://rht-labs.github.io/helm-charts
+      version: 0.0.3
+    description: A Helm chart to deploy ArgoCD
+    digest: 48b94a074987412f074b748741e8a017ace8c7fbb2aef7da7be3df8e33b8f05a
+    maintainers:
+    - name: garethahealy
+    name: argocd
+    type: application
+    urls:
+    - https://github.com/RedHat-Consulting-UK/helm3/releases/download/argocd-0.0.1/argocd-0.0.1.tgz
+    version: 0.0.1
+  bootstrap:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2020-05-01T07:14:38.525503618Z"
+    dependencies:
+    - name: app-of-apps
+      repository: file://../app-of-apps
+      version: 0.0.1
+    description: A Helm chart to bootstrap a project
+    digest: a6d5622f5f2fae96eab7aa26da4fa9e1114c004edf06c78b00859be76822e870
+    maintainers:
+    - name: garethahealy
+    name: bootstrap
+    type: application
+    urls:
+    - https://github.com/RedHat-Consulting-UK/helm3/releases/download/bootstrap-0.0.1/bootstrap-0.0.1.tgz
+    version: 0.0.1
+generated: "2020-05-01T07:14:38.218199422Z"
