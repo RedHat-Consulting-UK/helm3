@@ -1,0 +1,5 @@
+= helm commands
+
+- helm template app-of-apps/ --values app-of-apps/values-example.yaml
+- helm template --dependency-update argocd/ --values argocd/values-myproject.yaml
+- helm template --dependency-update bootstrap/ --values bootstrap/values-myproject.yaml

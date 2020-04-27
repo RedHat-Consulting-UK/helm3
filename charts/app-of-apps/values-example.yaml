@@ -1,0 +1,13 @@
+# Configure local templates
+project_namespace: my-project
+management_namespace: &management_destination "argocd"
+
+applications:
+  - name: my-project-argocd
+    destination: *management_destination
+    enabled: true
+    source: https://github.com/RedHat-Consulting-UK/helm3.git
+    source_path: charts/argocd
+    source_ref: master
+    helm_values:
+      - values-myproject.yaml

@@ -1,0 +1,21 @@
+{{- if .Values.enabled }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: default
+  namespace: {{ .Values.project_namespace | quote }}
+  labels:
+    app: argocd
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - namespace: {{ .Values.project_destination | quote }}
+      server: https://kubernetes.default.svc
+  sourceRepos:
+    - https://github.com/RedHat-Consulting-UK/helm3.git
+    - https://github.com/RedHat-Consulting-UK/future-cicd.git
+    - https://github.com/RedHat-Consulting-UK/future-cicd-app.git
+{{- end }}

@@ -1,1 +1,4 @@
 = helm3
+
+- helm repo add redhat-consulting-uk-helm3 https://redhat-consulting-uk.github.io/helm3
+- helm repo update

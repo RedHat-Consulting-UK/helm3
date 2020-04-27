@@ -1,0 +1,15 @@
+apiVersion: v2
+name: app-of-apps
+description: A Helm chart to create an ArgoCD app-of-apps based on https://github.com/rht-labs/ubiquitous-journey/tree/master/example-deployment
+type: application
+
+maintainers:
+  - name: garethahealy
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+version: 0.0.1
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application.
+appVersion: 0.1.0

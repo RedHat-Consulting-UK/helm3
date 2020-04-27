@@ -1,0 +1,23 @@
+{{- if .Values.enabled }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: argocd
+  namespace: {{ .Values.project_namespace | quote }}
+  labels:
+    app: argocd
+spec:
+  version: {{ .Values.version | quote }}
+  applicationInstanceLabelKey: project/{{ .Values.project_namespace }}
+  dex:
+    openShiftOAuth: true
+    version: {{ .Values.dex.version | quote }}
+  rbac:
+    defaultPolicy: role:admin
+#    policy: |
+#      g, cluster-admins, role:admin
+#    scopes: '[groups]'
+  server:
+    route: true
+{{- end }}
