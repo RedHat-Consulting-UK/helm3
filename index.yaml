@@ -16,6 +16,22 @@ entries:
   argocd:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2020-05-01T08:30:57.201426227Z"
+    dependencies:
+    - name: operatorhub
+      repository: https://rht-labs.github.io/helm-charts
+      version: 0.0.3
+    description: A Helm chart to deploy ArgoCD
+    digest: 6614500e184bca5460f1fadf378147861e1d79fac784b2d929073f254cf85b42
+    maintainers:
+    - name: garethahealy
+    name: argocd
+    type: application
+    urls:
+    - https://github.com/RedHat-Consulting-UK/helm3/releases/download/argocd-0.0.2/argocd-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2020-05-01T07:14:38.429431271Z"
     dependencies:
     - name: operatorhub
