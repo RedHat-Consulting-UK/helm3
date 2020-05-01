@@ -14,10 +14,10 @@ spec:
     openShiftOAuth: true
     version: {{ .Values.dex.version | quote }}
   rbac:
-    defaultPolicy: role:admin
-#    policy: |
-#      g, cluster-admins, role:admin
-#    scopes: '[groups]'
+    defaultPolicy: role:readonly
+    policy: |
+      g, argocd-admins, role:admin
+    scopes: '[groups]'
   server:
     route: true
 {{- end }}
